@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Insert</title>
+    <script>
+      // Logic without DOM
+
+      //   const data = [12, 44, 11, 5, 55, 60];
+      //   const position = 1;
+      //   const newEl = 100;
+
+      //   console.log(data);
+      //   for (let i = data.length - 1; i >= 0; i--) {
+      //     // console.log(data[i]);
+
+      //     if (i >= position) {
+      //       data[i + 1] = data[i];
+      //       if (i === position) {
+      //         data[i] = newEl;
+      //       }
+      //     }
+      //   }
+      //   console.log(data);
+
+      //   Logic with DOM
+
+      function insertEl() {
+        const data = [12, 44, 11, 5, 55, 60];
+        const position = document.getElementById("position").value;
+        let newEl = document.getElementById("element").value;
+        newEl = parseInt(newEl);
+
+        console.log(data);
+        for (let i = data.length - 1; i >= 0; i--) {
+          // console.log(data[i]);
+
+          if (i >= position) {
+            data[i + 1] = data[i];
+            if (i == position) {
+              data[i] = newEl;
+            }
+          }
+        }
+        console.log(data);
+      }
+
+      //  insert data in array with built-in function
+
+      // data.splice(2, 0, 200);
+    </script>
+  </head>
+  <body>
+    <input type="text" id="position" placeholder="Enter the position number" />
+    <input type="text" id="element" placeholder="Enter the element" />
+    <button onclick="insertEl()">Get New Array</button>
+  </body>
+</html>
