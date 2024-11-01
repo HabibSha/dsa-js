@@ -4,6 +4,45 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <script>
+      // // logic with static value
+
+      // const data = [12, 40, 15, 70, 35, 20, 60];
+      // const position = 3;
+      // console.log(data);
+
+      // // we add "-1" on "i < data.length" because the last white space value show "undefined";
+      // for (let i = position; i < data.length - 1; i++) {
+      //   // console.log(data[i]);
+      //   data[i] = data[i + 1];
+      // }
+      // data.length = data.length - 1;
+      // console.log(data);
+
+      // logic with dynamic value
+      function removeEl() {
+        const position = parseInt(document.getElementById("position").value);
+        const prevArr = document.getElementById("prev");
+        const newArr = document.getElementById("new");
+
+        const data = [12, 40, 15, 70, 35, 20, 60];
+        console.log(data);
+        prevArr.textContent = "Previous data: " + data;
+        // we add "-1" on "i < data.length" because the last white space value show "undefined";
+        for (let i = position; i < data.length - 1; i++) {
+          // console.log(data[i]);
+          data[i] = data[i + 1];
+        }
+        data.length = data.length - 1;
+        newArr.textContent = "Update data: " + data;
+        console.log(data);
+      }
+    </script>
   </head>
-  <body></body>
+  <body>
+    <input type="text" id="position" placeholder="Enter the position" />
+    <button onclick="removeEl()">Remove the element</button>
+    <p id="prev"></p>
+    <p id="new"></p>
+  </body>
 </html>
