@@ -4,6 +4,50 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <script>
+      // ## Exp:1 Using bracket notation
+      // add dynamic value in the object
+
+      // const key = "dynamicKey";
+      // const value = "dynamicValue";
+      // const obj = {};
+
+      // // Adding dynamic property
+      // obj[key] = value;
+      // console.log(obj); // { dynamicKey: "dynamicValue" }
+
+      // ## Exp:2 Using computed property Names (ES6)
+      //       const key = "dynamicKey";
+      // const value = "dynamicValue";
+
+      // const obj = {
+      //   [key]: value
+      // };
+
+      // console.log(obj); // { dynamicKey: "dynamicValue" }
+
+      // Linear array search
+
+      const data = [12, 20, 15, 10, 42, 62, 70, 42];
+      const searchItem = 42;
+      // search for 1 value
+      // let index = undefined;
+
+      // search for more than 1 value;
+      let obj = {};
+
+      for (let i = 0; i < data.length; i++) {
+        if (data[i] === searchItem) {
+          // index = i;
+          // break;
+
+          obj[i] = data[i];
+        }
+      }
+
+      console.log(obj);
+    </script>
   </head>
+
   <body></body>
 </html>
