@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // simple array merge with for loop
+
+      const data1 = [11, 31, 25, 20, 17, 50, 60];
+      const data2 = [70, 80, 90, 1001, 55];
+      let mergeArray = [];
+
+      for (let i = 0; i < data1.length; i++) {
+        mergeArray[i] = data1[i];
+      }
+
+      for (let i = 0; i < data2.length; i++) {
+        mergeArray[data1.length + i] = data2[i];
+      }
+      console.log(mergeArray);
+    </script>
+  </head>
+  <body></body>
+</html>
