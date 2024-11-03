@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // Fibonacci sequence with iterative way
+
+      // we have to set initial value. because fibonacci sequence is start from previous 2 values addition.
+      // n = (n - 1) + (n - 2);
+
+      // Without function
+
+      //   let fibo = [0, 1];
+      //   for (let i = 2; i <= 10; i++) {
+      //     fibo[i] = fibo[i - 1] + fibo[i - 2];
+      //   }
+
+      //   console.log(fibo);
+
+      // With function
+
+      function fibonacciFor(n) {
+        let fibo = [0, 1];
+        for (let i = 2; i <= n; i++) {
+          fibo[i] = fibo[i - 1] + fibo[i - 2];
+        }
+        return fibo;
+      }
+
+      const result = fibonacciFor(12);
+      console.log(result);
+
+      //   While loop
+
+      function fibonacciWhile(n) {
+        let fibo = [0, 1];
+        let i = 2;
+        while (i <= n) {
+          fibo[i] = fibo[i - 1] + fibo[i - 2];
+          i++;
+        }
+        return fibo;
+      }
+
+      const result2 = fibonacciFor(10);
+      console.log(result2);
+    </script>
+  </head>
+  <body></body>
+</html>

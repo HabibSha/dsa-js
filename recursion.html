@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // we can traverse loop another way with recursion function
+
+      function sayHi(n) {
+        if (n === 0) {
+          return 0;
+        }
+        // it will execute the function another time
+        sayHi(n - 1);
+        console.log("Hi everybody");
+      }
+
+      sayHi(7);
+    </script>
+  </head>
+  <body></body>
+</html>
