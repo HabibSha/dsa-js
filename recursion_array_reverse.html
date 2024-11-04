@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Insert</title>
+    <script>
+      const data = [11, 15, 5, 14, 30, 21, 10];
+
+      function reverseArray(data, start, end) {
+        if (start <= end) {
+          let temp = data[start];
+          data[start] = data[end];
+          data[end] = temp;
+          reverseArray(data, start + 1, end - 1);
+        }
+      }
+      console.log(data);
+      reverseArray(data, 0, data.length - 1);
+    </script>
+  </head>
+  <body></body>
+</html>
