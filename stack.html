@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // stack and queue are "last come first out" process.
+
+      let data = [];
+      let position = data.length;
+      const max = 6;
+
+      // Push method
+      function push(newValue) {
+        if (position >= max) {
+          alert("Stack is full, you can not add " + newValue);
+        }
+        data[position] = newValue;
+        position++;
+      }
+
+      // Pop method
+      function pop() {
+        if (position > 0) {
+          position--;
+          data.length = position;
+        } else {
+          alert("Stack is empty");
+        }
+      }
+
+      push(10);
+      push(35);
+      push(11);
+      push(3);
+      push(7);
+      pop();
+      pop();
+      pop();
+      pop();
+      pop();
+      //   pop();
+      //   push(32);
+      //   push(25);
+
+      console.log(data);
+    </script>
+  </head>
+  <body></body>
+</html>
