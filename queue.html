@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let queue = [];
+      let curPosition = queue.length;
+      let maxSize = 5;
+
+      function enqueue() {
+        let inputElement = document.getElementById("newEl");
+        let newEl = parseInt(inputElement.value);
+
+        if (curPosition >= maxSize) {
+          alert("Queue is already full!");
+        } else {
+          queue[curPosition] = newEl;
+          curPosition++;
+          inputElement.value = "";
+        }
+      }
+
+      function dequeue() {
+        if (!isEmpty()) {
+          for (let i = 0; i < queue.length; i++) {
+            queue[i] = queue[i + 1];
+          }
+          curPosition--;
+          return (queue.length = curPosition);
+        } else {
+          alert("Queue is already empty!");
+        }
+      }
+
+      function front() {
+        if (!isEmpty()) {
+          console.log(queue[0]);
+        } else {
+          alert("Queue is already empty!");
+        }
+      }
+
+      function rear() {
+        if (!isEmpty()) {
+          console.log(queue[curPosition - 1]);
+        } else {
+          alert("Queue is already empty!");
+        }
+      }
+
+      function isEmpty() {
+        if (curPosition <= 0) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+
+      function display() {
+        console.log(queue);
+      }
+
+      //   enqueue(10);
+      //   enqueue(15);
+
+      //   dequeue();
+
+      //   front();
+      //   rear();
+
+      //   display();
+    </script>
+  </head>
+  <body>
+    <input type="text" placeholder="Add new element" id="newEl" />
+    <button onclick="enqueue()">Add Element</button>
+    <button onclick="dequeue()">Remove Element</button>
+    <button onclick="display()">Display</button>
+    <button onclick="front()">Get Front Element</button>
+    <button onclick="rear()">Get Rear Element</button>
+  </body>
+</html>
