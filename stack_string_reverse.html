@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let data = [];
+      let currentPosition = data.length;
+
+      function push(newValue) {
+        data[currentPosition] = newValue;
+        currentPosition += 1;
+      }
+
+      function pop() {
+        const lastRemovedValue = data[currentPosition - 1];
+
+        currentPosition -= 1;
+        data.length = currentPosition;
+        return lastRemovedValue;
+      }
+
+      function reverseStr(item) {
+        for (let i = 0; i < item.length; i++) {
+          push(item[i]);
+        }
+
+        // for reverse
+        // let reverseArr = [];
+        // let position = reverseArr.length;
+        for (let i = 0; i < item.length; i++) {
+          //   reverseArr[position] = pop();
+          //   position++;
+
+          // we can save our new reverse array through "call by reference"...
+          item[i] = pop();
+          // it will work as same as above logic.
+        }
+        return reverseArr;
+      }
+
+      let str = "Bangla";
+      str = str.split("");
+      let result = reverseStr(str);
+      console.log(result.join(""));
+      //   console.log(data);
+    </script>
+  </head>
+  <body></body>
+</html>
