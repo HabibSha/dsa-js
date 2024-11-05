@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      class Stack {
+        data = [];
+        curPosition;
+        maxSize;
+        lastRemovedValue;
+
+        constructor(size) {
+          this.maxSize = size;
+          this.curPosition = this.data.length;
+        }
+
+        push(newValue) {
+          if (this.curPosition >= this.maxSize) {
+            alert("Stack is full");
+          } else {
+            this.data[this.curPosition] = newValue;
+            this.curPosition++;
+          }
+        }
+
+        pop() {
+          if (this.curPosition > 0) {
+            this.lastRemovedValue = this.data[this.curPosition - 1];
+            this.curPosition--;
+            this.data.length = this.curPosition;
+            return this.lastRemovedValue;
+          } else {
+            alert("Stack is empty");
+          }
+        }
+
+        reverseStr(item) {
+          for (let i = 0; i < item.length; i++) {
+            this.push(item[i]);
+          }
+
+          for (let i = 0; i < item.length; i++) {
+            item[i] = this.pop();
+          }
+        }
+
+        display() {
+          console.log(this.data);
+        }
+      }
+
+      st1 = new Stack(5);
+      let str = "hello";
+      str = str.split("");
+      st1.reverseStr(str);
+      //   console.log(result.join(""));
+
+      //   st1.push(str.split(""));
+
+      //   st1.push(20);
+      //   st1.push(30);
+      //   st1.pop();
+      st1.display();
+    </script>
+  </head>
+  <body></body>
+</html>
