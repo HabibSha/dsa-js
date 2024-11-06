@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function searchEl() {
+        const data = [12, 1, 5, 8, 12, 45, 7, 5, 1, 3, 45, 78];
+        let searchValue = document.getElementById("searchEl").value;
+        searchValue = parseInt(searchValue);
+        // let result = {};
+        let result = [];
+
+        for (let i = 0; i < data.length; i++) {
+          if (data[i] === searchValue) {
+            // result[i] = data[i];
+            result.push(`Index ${i}: ${data[i]}`);
+          }
+        }
+        console.log(result);
+
+        const resultElement = document.createElement("h3");
+        resultElement.textContent =
+          result.length > 0 ? result.join(", ") : "No matches found";
+        document.body.appendChild(resultElement);
+      }
+    </script>
+  </head>
+  <body>
+    <input type="text" id="searchEl" placeholder="Searching Element" />
+    <button onclick="searchEl()">Search</button>
+  </body>
+</html>
