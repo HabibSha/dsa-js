@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // const data = [5, 9, 13, 17, 23, 30, 45, 61];
+      const data = [17, 21, 11, 28, 9, 3, 50, 33];
+      let findEl = 28;
+      let startEl = 0;
+      let endEl = data.length - 1;
+      let position = undefined;
+
+      // Sort the data array in ascending order
+      for (let i = 0; i < data.length; i++) {
+        for (let j = 0; j < data.length - 1; j++) {
+          // console.log(data);
+          if (data[j] > data[j + 1]) {
+            const temp = data[j];
+            data[j] = data[j + 1];
+            data[j + 1] = temp;
+          }
+        }
+      }
+
+      console.log("Sorted data:", data);
+
+      while (startEl <= endEl) {
+        let midEl = Math.floor((startEl + endEl) / 2);
+        // console.log(data[midEl]);
+        if (data[midEl] === findEl) {
+          position = midEl;
+          break;
+        } else if (data[midEl] < findEl) {
+          startEl = midEl + 1;
+        } else {
+          endEl = midEl - 1;
+        }
+      }
+
+      if (position !== undefined) {
+        console.log(`Element ${findEl} found at index ${position}`);
+      } else {
+        console.log(`Element ${findEl} not found in the array`);
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
