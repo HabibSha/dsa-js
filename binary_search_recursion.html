@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const data = [10, 18, 24, 31, 47, 62, 77];
+      let findEl = 47;
+      let startEl = 0;
+      let endEl = data.length - 1;
+      let position = undefined;
+
+      function recursiveSearchEl(data, startEl, endEl) {
+        const midEl = Math.floor((startEl + endEl) / 2);
+        if (data[midEl] === findEl) {
+          position = midEl;
+          return true;
+        } else if (data[midEl] < findEl) {
+          recursiveSearchEl(data, midEl + 1, endEl);
+        } else {
+          recursiveSearchEl(data, midEl - 1, startEl);
+        }
+      }
+
+      recursiveSearchEl(data, startEl, endEl);
+      if (position !== undefined) {
+        console.log(`Element ${findEl} found at index ${position}`);
+      } else {
+        console.log(`Element ${findEl} not found in the array`);
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
