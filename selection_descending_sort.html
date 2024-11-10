@@ -9,11 +9,10 @@
 
       function selectionSort(data) {
         let minVal;
-        for (let i = 0; i < data.length; i++) {
+        for (let i = data.length - 1; i >= 0; i--) {
           minVal = i;
 
-          for (let j = i + 1; j < data.length; j++) {
-            // if we replace "<" to ">", our output will be descending order
+          for (let j = i - 1; j >= 0; j--) {
             if (data[j] < data[minVal]) {
               minVal = j;
             }
