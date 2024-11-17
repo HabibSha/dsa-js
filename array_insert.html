@@ -7,22 +7,22 @@
     <script>
       // Logic without DOM
 
-      //   const data = [12, 44, 11, 5, 55, 60];
-      //   const position = 1;
-      //   const newEl = 100;
+      // const data = [12, 44, 11, 5, 55, 60];
+      // const position = 1;
+      // const newEl = 100;
 
-      //   console.log(data);
-      //   for (let i = data.length - 1; i >= 0; i--) {
-      //     // console.log(data[i]);
+      // console.log(data);
+      // for (let i = data.length - 1; i >= 0; i--) {
+      //   // console.log(data[i]);
 
-      //     if (i >= position) {
-      //       data[i + 1] = data[i];
-      //       if (i === position) {
-      //         data[i] = newEl;
-      //       }
+      //   if (i >= position) {
+      //     data[i + 1] = data[i];
+      //     if (i === position) {
+      //       data[i] = newEl;
       //     }
       //   }
-      //   console.log(data);
+      // }
+      // console.log(data);
 
       //   Logic with DOM
 
@@ -38,7 +38,7 @@
 
           if (i >= position) {
             data[i + 1] = data[i];
-            if (i == position) {
+            if (i === position) {
               data[i] = newEl;
             }
           }

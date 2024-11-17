@@ -11,11 +11,12 @@
       // const position = 3;
       // console.log(data);
 
-      // // we add "-1" on "i < data.length" because the last white space value show "undefined";
-      // for (let i = position; i < data.length - 1; i++) {
+      // for (let i = position; i < data.length; i++) {
       //   // console.log(data[i]);
       //   data[i] = data[i + 1];
       // }
+
+      // we add "-1" on "i < data.length" because the last white space value show "undefined";
       // data.length = data.length - 1;
       // console.log(data);
 
@@ -28,11 +29,12 @@
         const data = [12, 40, 15, 70, 35, 20, 60];
         console.log(data);
         prevArr.textContent = "Previous data: " + data;
-        // we add "-1" on "i < data.length" because the last white space value show "undefined";
-        for (let i = position; i < data.length - 1; i++) {
+
+        for (let i = position; i < data.length; i++) {
           // console.log(data[i]);
           data[i] = data[i + 1];
         }
+        // we add "-1" on "i < data.length" because the last white space value show "undefined";
         data.length = data.length - 1;
         newArr.textContent = "Update data: " + data;
         console.log(data);
