@@ -32,16 +32,41 @@
 
 // console.log(data);
 
-const data = [17, 21, 11, 28, 9, 3, 50, 33];
+// const data = [17, 21, 11, 28, 9, 3, 50, 33];
 
-for (let i = 0; i < data.length; i++) {
-  for (let j = 0; j < data.length; j++) {
-    if (data[j] > data[j + 1]) {
-      const temp = data[j];
-      data[j] = data[j + 1];
-      data[j + 1] = temp;
+// for (let i = 0; i < data.length; i++) {
+//   for (let j = 0; j < data.length; j++) {
+//     if (data[j] > data[j + 1]) {
+//       const temp = data[j];
+//       data[j] = data[j + 1];
+//       data[j + 1] = temp;
+//     }
+//   }
+// }
+
+// console.log(data);
+
+// todo: random topics outside of dsa
+// nested object
+
+const person = {
+  name: "John Doe",
+  age: 30,
+  address: {
+    street: "123 Main St",
+    city: "Anytown",
+    zipCode: "12345",
+  },
+  hobbies: ["reading", "gaming"],
+};
+
+for (const key in person) {
+  if (typeof person[key] === "object" && !Array.isArray(person[key])) {
+    console.log(`Nested key: ${key}`);
+    for (const subKey in person[key]) {
+      console.log(`Subkey: ${subKey} = ${person[key][subKey]}`);
     }
+  } else {
+    console.log(`${key} = ${person[key]}`);
   }
 }
-
-console.log(data);
