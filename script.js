@@ -46,30 +46,58 @@
 
 // console.log(data);
 
-// Binary search
+// Binary search iteration
+// const data = [5, 9, 13, 17, 23, 30, 45, 61];
+
+// const findEl = 30;
+// let startEl = 0;
+// let endEl = data.length - 1;
+// let position = undefined;
+
+// while (startEl <= endEl) {
+//   const midEl = Math.floor((startEl + endEl) / 2);
+//   if (data[midEl] === findEl) {
+//     position = midEl;
+//     break;
+//   } else if (data[midEl] < findEl) {
+//     startEl = midEl + 1;
+//   } else {
+//     endEl = midEl - 1;
+//   }
+// }
+
+// if (position !== undefined) {
+//   console.log(`The finding value: ${findEl} is at index: ${position}`);
+// } else {
+//   console.log(`The value: ${findEl} is not found in array`);
+// }
+
+// Binary search recursion
 const data = [5, 9, 13, 17, 23, 30, 45, 61];
 
-const findEl = 30;
+const findEl = 45;
 let startEl = 0;
 let endEl = data.length - 1;
 let position = undefined;
 
-while (startEl <= endEl) {
+function recursionSearchEl(data, startEl, endEl) {
   const midEl = Math.floor((startEl + endEl) / 2);
   if (data[midEl] === findEl) {
     position = midEl;
-    break;
-  } else if (data[midEl] < findEl) {
-    startEl = midEl + 1;
+    return true;
+  } else if (midEl < findEl) {
+    recursionSearchEl(data, midEl + 1, endEl);
   } else {
-    endEl = midEl - 1;
+    recursionSearchEl(data, startEl, midEl - 1);
   }
 }
 
+recursionSearchEl(data, startEl, endEl);
+
 if (position !== undefined) {
-  console.log(`The finding value: ${findEl} is at index: ${position}`);
+  console.log(`The find el: ${findEl} is index = ${position}`);
 } else {
-  console.log(`The value: ${findEl} is not found in array`);
+  console.log(`No finding el ${findEl} in this array`);
 }
 
 // todo: random topics outside of dsa
